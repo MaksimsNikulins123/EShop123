@@ -1,0 +1,11 @@
+$('.icon-menu').click(function(event){
+    $(this).toggleClass('_active');
+    $('.menu__body').toggleClass('_active');
+    if($(this).hasClass('_active')){
+        $('body').data('scroll',$(window).scrollTop());
+    }
+        $('body').toggleClass('_lock');
+        if(!$(this).hasClass('_lock')){
+            $('body,html').scrollTop(parseInt($('body').data('scroll')))
+        }
+});
